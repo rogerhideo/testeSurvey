@@ -21,7 +21,7 @@
 					<span class="text-gray-300"> Tipo de questão </span>
 					<div class="inline-block ">
 						<button 
-							class="ml-1 flex items-center justify-center h-4 w-4 rounded-full ring-2 ring-gray-300 focus:ring-inset  hover:ring-gray-400 focus:outline-none" @click="isOpen = true"
+							class="ml-1 flex items-center justify-center h-4 w-4 rounded-full ring-2 ring-gray-300 focus:ring-inset  hover:ring-gray-400 focus:outline-none" @click="toggleModal"
 						>	
 							<svg class=" w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -44,7 +44,12 @@
 	export default {
 		data: () => ({
 			isOpen: false
-		})
+		}),
+		methods: {
+			toggleModal() {
+				this.isOpen = !this.isOpen
+			}
+  		}
 	}
 </script>
 
