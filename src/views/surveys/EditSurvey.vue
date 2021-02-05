@@ -33,9 +33,11 @@
 					</div>
 				</div> 
 				<div v-if="isOpenSelected">
-					
-						<p>{{selected}}</p>
-
+					<checkBox v-show="selected === 'Caixa de Seleção'"/>
+					<listaSuspensa v-show="selected === 'Lista Suspensa'"/>
+					<multiplaEscolha v-show="selected === 'Multiplha Escolha'"/>
+					<respostaLonga v-show="selected === 'Parágrafo'"/>
+					<respostaCurta v-show="selected === 'Resposta Curta'"/>
 				</div>
 			</div>
 			<div class="md:flex-grow-0 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 mt-5 ml-5" v-if="isOpenOptions"> 
@@ -109,14 +111,27 @@
   	</div>
 </template>
 
+
 <script>
-	export default {
+import checkBox from '@/components/surveys/checkBox.vue';
+import listaSuspensa from '@/components/surveys/listaSuspensa.vue';
+import multiplaEscolha from '@/components/surveys/multiplaEscolha.vue';
+import respostaLonga from '@/components/surveys/respostaLonga.vue';
+import respostaCurta from '@/components/surveys/respostaCurta.vue';
+export default {
 		data(){
 			return {
 				isOpenOptions: false,
 				isOpenSelected: false,
 				selected: 'Tipo de questão'
 			}
+		},
+		components: {
+			checkBox,
+			listaSuspensa,
+			multiplaEscolha,
+			respostaLonga,
+			respostaCurta
 		},
 		methods: {
 			toggleModalOptions() {
