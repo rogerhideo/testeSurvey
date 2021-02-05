@@ -1,5 +1,5 @@
 <template>
- 	<div class="items-center justify-center min-h-screen bg-indigo-100 p-12 lg:p-24 xl:p-48">
+ 	<div class="items-center justify-center min-h-screen bg-indigo-100 p-12 ">
      	<div class="md:flex-wrap w-4/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5 "> 
         	<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
 				<p class="text-xl text-black" > Titulo </p>
