@@ -40,10 +40,10 @@
 					<respostaCurta v-show="selected === 'Resposta Curta'"/>
 				</div>
 			</div>
-			<div class="md:flex-grow-0 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 mt-5 ml-5" v-if="isOpenOptions"> 
+			<div class="md:flex-grow-0 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 mt-5 ml-5" v-if="isOpenOptions" > 
 					<div class="flex ">				
 							<button 
-								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="isOpenSelected = true" @click.stop="selected = 'Resposta Curta'"
+								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="toggleModalSelected" @click.stop="selected = 'Resposta Curta'" 
 							
 							>	
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -56,8 +56,8 @@
 					</div>	
 					<div class="flex mt-3">				
 							<button 
-								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="isOpenSelected = true"
-								@click.stop="selected = 'Parágrafo'"
+								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="toggleModalSelected"
+								@click.stop="selected = 'Parágrafo'" 
 							>	
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
@@ -69,7 +69,7 @@
 					</div>	
 					<div class="flex mt-3">				
 							<button 
-								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-nonee" @click="isOpenSelected = true" @click.stop="selected = 'Multiplha Escolha'"
+								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-nonee" @click="toggleModalSelected" @click.stop="selected = 'Multiplha Escolha'"  
 							>	
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M4.649 3.084A1 1 0 015.163 4.4 13.95 13.95 0 004 10c0 1.993.416 3.886 1.164 5.6a1 1 0 01-1.832.8A15.95 15.95 0 012 10c0-2.274.475-4.44 1.332-6.4a1 1 0 011.317-.516zM12.96 7a3 3 0 00-2.342 1.126l-.328.41-.111-.279A2 2 0 008.323 7H8a1 1 0 000 2h.323l.532 1.33-1.035 1.295a1 1 0 01-.781.375H7a1 1 0 100 2h.039a3 3 0 002.342-1.126l.328-.41.111.279A2 2 0 0011.677 14H12a1 1 0 100-2h-.323l-.532-1.33 1.035-1.295A1 1 0 0112.961 9H13a1 1 0 100-2h-.039zm1.874-2.6a1 1 0 011.833-.8A15.95 15.95 0 0118 10c0 2.274-.475 4.44-1.332 6.4a1 1 0 11-1.832-.8A13.949 13.949 0 0016 10c0-1.993-.416-3.886-1.165-5.6z" clip-rule="evenodd" />
@@ -81,7 +81,7 @@
 					</div>	
 					<div class="flex mt-3">				
 							<button 
-								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="isOpenSelected = true" @click.stop="selected = 'Caixa de Seleção'"
+								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="toggleModalSelected" @click.stop="selected = 'Caixa de Seleção'"  
 							>	
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -93,8 +93,8 @@
 					</div>	
 					<div class="flex mt-3">				
 							<button 
-								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-nonee" @click="isOpenSelected = true" @click.stop="selected = 'Lista Suspensa'"
-							>	
+								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-nonee" @click="toggleModalSelected" @click.stop="selected = 'Lista Suspensa'" 
+							> 
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
@@ -136,6 +136,13 @@ export default {
 		methods: {
 			toggleModalOptions() {
 				this.isOpenOptions = !this.isOpenOptions
+			},
+			toggleModalSelected() {
+				this.isOpenSelected = true
+				this.isOpenOptions = false
+			},
+			testeOk(){
+					console.log('okkkk')
 			}
   		}
 	}
