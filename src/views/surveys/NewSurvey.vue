@@ -1,7 +1,7 @@
 <template>
     
   <div class="flex justify-center items-center min-h-screen bg-indigo-100 p-12 ">
-     <div class="flex-shrink-0 w-full sm:flex-wrap  sm:w-6/12 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl  p-5"> 
+     <div class="min-w-full sm:flex-wrap  sm:min-w-0 sm:w-6/12 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl  p-5"> 
         <div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
             <label for="survey_name" class="block text-sm font-medium text-gray-700 p-1">Título o questionáro:</label>
 								<input 
