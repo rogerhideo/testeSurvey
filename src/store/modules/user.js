@@ -1,82 +1,20 @@
 export const namespaced = true
 
 export const state = {
-    users: [{
-      id: 1,
-      userName: 'aaaa',
-      email: 'aaaa@hotmail.com',
-      password: 'aaaa',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 1
-    },
+  surveys: [
     {
-      id: 2,
-      userName: 'bbbb',
-      email: 'bbbb@hotmail.com',
-      password: 'bbbb',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 2
-    },
-    {
-      id: 3,
-      userName: 'cccc',
-      email: 'ccccc@hotmail.com',
-      password: 'cccc',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 3
-    }],
-    users2: [{
-      id: 111,
-      userName: 'zzzz',
-      email: 'zzzzzz@hotmail.com',
-      password: 'zzzz',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 111
-    },
-    {
-      id: 222,
-      userName: 'yyyy',
-      email: 'yyyyy@hotmail.com',
-      password: 'yyyy',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 222
-    },
-    {
-      id: 333,
-      userName: 'xxxx',
-      email: 'xxxxxxx@hotmail.com',
-      password: 'xxxx',
-      country: 'canada',
-      streetAddress: 'botelho de oliveira 51',
-        city: 'rondonópolis',
-      stateP: 'Mato Grosso',
-      postalCode: '78735745',
-      order: 333
-    }],
-    usersTotal: 0,
-    user: {},
-    perPage: 5
+    id: 1,
+    title: "Beach Cleanup",
+    description: "Let's clean up this beach.",
+    question: [{
+            tipoSurvey: 1,
+            titleQuestion: "Adam Jahr",
+            options : [],
+            newQuestion :[]
+          }]
+    }]
 }
+    
 export const mutations = {
     ADD_USER(state, user) {
         state.users.push(user)

@@ -7,6 +7,7 @@
 								<input 
 									type="text" 
 									placeholder= "Digite o titulo do questionário"
+                  v-model="title"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mx-3 bg-gray-100 border-2  hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>
 
@@ -17,6 +18,7 @@
 									name="description" 
 									id="description" 
                   placeholder= "Digite o titulo do questionário"
+                  v-model = "description"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mb-3 mx-3 bg-gray-100 border-2   hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>      
               
@@ -34,7 +36,12 @@
 
 <script>
       export default {
-            
+          data() {
+            return {
+              title: '', 
+              description: ''							
+            }
+	        }  
       }
 </script>
 
