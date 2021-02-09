@@ -60,11 +60,11 @@
 						question: {
 							tipoSurvey: 0,
 							titleQuestion: '',
-							options: {
-								inputPayload: '',
-								options:{
-								}
-							},
+							options: 
+								 [{
+									inputPayload: ''
+								}]
+							,
 							newQuestion:{
 								tipoSurvey: 0,
 								titleQuestion: '',
