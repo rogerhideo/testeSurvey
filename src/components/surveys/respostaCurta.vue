@@ -41,7 +41,9 @@
             },
             addOption(){
                 console.log('adddddddd')
-                this.value.push(this.inputPayload)
+                this.value.push({
+                    inputPayload: ''
+                })
             }
                  
         },
