@@ -9,9 +9,10 @@
                 v-model= "value.inputPayload"
                 @input= "createNewOption"
                 class="flex w-full outline-none mt-1  p-1 mb-3  border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
-            >          
+            >      
+            <respostaCurta v-model="realValue.options"/>    
 		</div>	
-        <respostaCurta v-if="realValue.options[0]" v-model="realValue.options"/>
+        
     </div>
 </template>
 
@@ -35,11 +36,10 @@
                  this.$emit("input", value);
             },
             createNewOption(){
-                var newOption = {
+                this.value.options = {
                     inputPayload: '',
-					options:[]
+					options:{}
                 }
-                this.value.options.push(newOption)
             }
                  
         },

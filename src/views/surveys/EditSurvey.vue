@@ -62,7 +62,7 @@
 							titleQuestion: '',
 							options: {
 								inputPayload: '',
-								options:[]
+								options:{}
 							},
 							newQuestion: [{
 								tipoSurvey: 0,
