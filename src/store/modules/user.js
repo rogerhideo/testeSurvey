@@ -6,12 +6,12 @@ export const state = {
     id: 1,
     title: "Beach Cleanup",
     description: "Let's clean up this beach.",
-    question: [{
-            tipoSurvey: 1,
+    question: {
+            tipoSurvey: 0,
             titleQuestion: "Adam Jahr",
             options : [],
             newQuestion :[]
-          }]
+          }
     }]
 }
     

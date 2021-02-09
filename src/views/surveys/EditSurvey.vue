@@ -30,45 +30,54 @@
 
 
 <script>
-import miniSurvey from '@/components/surveys/miniSurvey.vue';
-export default {		
-		data(){
-			return{
-				survey: this.createFreshSurveyObject()
+	import miniSurvey from '@/components/surveys/miniSurvey.vue';
+	export default {		
+			data(){
+				return{
+					survey: this.createFreshSurveyObject()
+				}
+			},
+			props: {
+				titleProps: {
+					type: String,
+					default: ''
+				},
+				descriptionProps: {
+					type: String,
+					default: ''
+				},
+			},
+			components: {
+				miniSurvey
+			},
+			methods:{
+				createFreshSurveyObject() {
+					const id = Math.floor(Math.random() * 10000000)
+					return {
+						id: id,
+						title: this.titleProps,
+						description: this.descriptionProps,
+						question: {
+							tipoSurvey: 0,
+							titleQuestion: '',
+							options: {
+								inputPayload: '',
+								options:[]
+							},
+							newQuestion: [{
+								tipoSurvey: 0,
+								titleQuestion: '',
+								options: [{
+									inputPayload: '',
+									options:[]
+								}],
+							}
+
+							]
+						}
+					}
+				} 
 			}
-		},
-		props: {
-			titleProps: {
-				type: String,
-				default: ''
-			},
-			descriptionProps: {
-				type: String,
-				default: ''
-			},
-		},
-		components: {
-			miniSurvey
-		},
-		methods:{
-			 createFreshSurveyObject() {
-                const id = Math.floor(Math.random() * 10000000)
-
-                return {
-                    id: id,
-                    title: this.titleProps,
-                    description: this.descriptionProps,
-                    question: [{
-                          tipoSurvey:0,
-                          titleQuestion: '',
-                          options: [],
-                          newQuestion: []
-                          }
-
-                    ]
-                }
-            } 
-		}
 	}
 
 </script>
