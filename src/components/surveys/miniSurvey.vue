@@ -27,11 +27,11 @@
 					</div>
 				</div> 
                 <div v-if="isOpenSelected">
-					<checkBox v-if="value.tipoSurvey === 4" v-model="realValue.options"/>
-					<listaSuspensa v-if="value.tipoSurvey === 5" v-model="realValue.options"/>
-					<multiplaEscolha v-if="value.tipoSurvey === 3" v-model="realValue.options"/>
-					<respostaLonga v-if="value.tipoSurvey === 2" v-model="realValue.options"/>
-					<respostaCurta v-if="value.tipoSurvey === 1" v-model="realValue.options"/>
+					<checkBox v-if="realValue.tipoSurvey === 4" v-model="realValue.options"/>
+					<listaSuspensa v-if="realValue.tipoSurvey === 5" v-model="realValue.options"/>
+					<multiplaEscolha v-if="realValue.tipoSurvey === 3" v-model="realValue.options"/>
+					<respostaLonga v-if="realValue.tipoSurvey === 2" v-model="realValue.options"/>
+					<respostaCurta v-if="realValue.tipoSurvey === 1" v-model="realValue.options"/>
 				</div>
 			</div>
 			<div class="md:flex-grow-0 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 mt-5 ml-5" v-if="isOpenOptions" > 

@@ -62,18 +62,17 @@
 							titleQuestion: '',
 							options: {
 								inputPayload: '',
-								options:{}
+								options:{
+								}
 							},
-							newQuestion: [{
+							newQuestion:{
 								tipoSurvey: 0,
 								titleQuestion: '',
-								options: [{
+								options: {
 									inputPayload: '',
-									options:[]
-								}],
+									options:{}
+								},
 							}
-
-							]
 						}
 					}
 				} 
