@@ -114,7 +114,6 @@
 							</div>
 		</div>
         <div >
-        
             <miniSurvey v-if="isOpenNew" v-model="realValue.newQuestion"/>
         </div>
         
