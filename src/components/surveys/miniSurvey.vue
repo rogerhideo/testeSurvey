@@ -1,5 +1,6 @@
 <template>
     <div>
+      <div class="flex-wrap">
      <div class="flex p-5 mx-5">		   
         <div class="md:w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5 mt-5 border-l-3 focus:border-blue-500"> 
 				<div class=" flex-wrap sm:flex sm:justify-between items-center w-full text-left "> 
@@ -99,7 +100,26 @@
 
 			</div>
     </div>
- 
+       <div class='md:w-3/5 '>
+
+							<div  class="flex w-full">
+									<button 
+										type="submit"
+										@click="creteNewQuestion"
+                                        @click.stop="isOpenNew = true"
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+									>
+										+ Adicionar question
+									</button>
+							</div>
+		</div>
+        <div >
+        
+            <miniSurvey v-if="isOpenNew" v-model="realValue.newQuestion"/>
+        </div>
+        
+
+    </div>  
     </div>
 </template>
 
@@ -111,22 +131,24 @@
     import respostaCurta from '@/components/surveys/respostaCurta.vue';
 
     export default {
+        name:"miniSurvey",
         data(){
 			return {
 				isOpenOptions: false,
 				isOpenSelected: false,
+                isOpenNew: false,
 				selected: 'Tipo de questão'
 			}
 		},
         props: {
             value: {
                 required: false,
-                type: Array,
+                type: Object,
                 default: null
             },
             list: {
                 required: false,
-                type: Array,
+                type: Object,
                 default: null
             }
         },
@@ -142,33 +164,38 @@
 				this.isOpenOptions = !this.isOpenOptions
 			},
 			toggleModalSelected() {
-                console.log('antes case > ' + this.value.tipoSurvey)
                 switch (this.value.tipoSurvey) {
                     case 4:
-                        console.log('55555 ')
                         this.selected = 'Caixa de Seleção';
                         break;
                     case 5:
-                        console.log('44444')
                         this.selected = 'Lista Suspensa';
                         break;
                     case 3:
-                        console.log('33333')
                         this.selected = 'Multiplha Escolha';
                         break;
                     case 2:
-                        console.log('22222')
                         this.selected = 'Parágrafo';
                         break;
                     case 1:
-                        console.log('1111')
                         this.selected = 'Resposta Curta';
                         break;
                     }
-                    console.log('dps case > ' + this.value.tipoSurvey)
                     this.isOpenSelected = true
 				    this.isOpenOptions = false
 			},
+            creteNewQuestion(){
+
+                this.value.newQuestion = {
+                    tipoSurvey: 0,
+					titleQuestion: '',
+					options: 
+                            [{
+                            inputPayload: ''
+                        }],
+					newQuestion:{}
+                }
+            },
 			emitter(value) {
                  this.$emit("input", value);
             }

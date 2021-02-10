@@ -22,36 +22,19 @@
                 required: false,
                 type: Object,
                 default: null
-            },
-            list: {
-                required: false,
-                type: Object,
-                default: null
-            }
+            }     
         },
         methods: {
-			emitter(value) {
-                 this.$emit("input", value);
-            },
-            createNewOption(){
-                this.value.options = {
-                    inputPayload: '',
-					options:{}
-                }
-            },
             addOption(){
                 console.log('adddddddd')
                 this.value.push({
                     inputPayload: ''
                 })
+              
             }
                  
-        },
-        computed:{
-            realValue() {
-                return this.value ? this.value : this.list;
-            }
-        }  
+        }
+
     }
 </script>
 

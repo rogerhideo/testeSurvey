@@ -22,9 +22,9 @@
 				
          	</div> 
       	</div>
-
-		<miniSurvey v-model="survey.question"/>
-
+		<div>	
+			<miniSurvey v-model="survey.question"/>
+		</div>				
   	</div>
 </template>
 
@@ -63,21 +63,14 @@
 							options: 
 								 [{
 									inputPayload: ''
-								}]
-							,
-							newQuestion:{
-								tipoSurvey: 0,
-								titleQuestion: '',
-								options: {
-									inputPayload: '',
-									options:{}
-								},
-							}
-
+								}],
+							newQuestion:{}
 						}
+
 					}
-				} 
-			}
+				}
+			} 
+			
 	}
 
 </script>
