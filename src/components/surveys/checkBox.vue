@@ -27,6 +27,7 @@
                 </div>	
             </label>
         </div>
+       
     </div>
 </template>
 
@@ -44,8 +45,7 @@
             addOption(){
                 console.log('adddddddd')
                 this.value.push({
-                    inputPayload: '',
-                    name : 'kkkkk'
+                    inputPayload: ''
                 })
               
             }

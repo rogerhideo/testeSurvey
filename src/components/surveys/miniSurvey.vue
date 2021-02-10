@@ -2,7 +2,7 @@
     <div>
       <div class="flex-wrap">
      <div class="flex p-5 mx-5">		   
-        <div class="md:w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5 mt-5 border-l-3 focus:border-blue-500"> 
+        <div class="md:w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5  border-l-3 focus:border-blue-500"> 
 				<div class=" flex-wrap sm:flex sm:justify-between items-center w-full text-left "> 
 					<div class="w-full sm:w-8/12">
 						<input 
@@ -100,16 +100,15 @@
 
 			</div>
     </div>
-       <div class='md:w-3/5 '>
-
-							<div  class="flex w-full">
+       <div v-if="buttonOn" class='w-full '>
+							<div  class="flex w-full md:w-3/5 ">
 									<button 
 										type="submit"
 										@click="creteNewQuestion"
                                         @click.stop="isOpenNew = true"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-3/5 focus:outline-none "
 									>
-										+ Adicionar question
+										+ Adicionar questão
 									</button>
 							</div>
 		</div>
@@ -136,6 +135,7 @@
 				isOpenOptions: false,
 				isOpenSelected: false,
                 isOpenNew: false,
+				buttonOn : true,
 				selected: 'Tipo de questão'
 			}
 		},
@@ -184,7 +184,7 @@
 				    this.isOpenOptions = false
 			},
             creteNewQuestion(){
-
+				this.buttonOn = false
                 this.value.newQuestion = {
                     tipoSurvey: 0,
 					titleQuestion: '',
