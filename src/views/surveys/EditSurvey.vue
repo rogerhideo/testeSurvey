@@ -61,9 +61,9 @@
 							tipoSurvey: 0,
 							titleQuestion: '',
 							options: 
-								 [{
-									inputPayload: ''
-								}],
+								 {
+									options: []
+								},
 							newQuestion:{}
 						}
 
