@@ -62,6 +62,7 @@
 							titleQuestion: '',
 							options: 
 								 {
+									 inputPayload: '',
 									options: []
 								},
 							newQuestion:{}
