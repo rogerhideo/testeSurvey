@@ -100,21 +100,7 @@
 
 			</div>
     </div>
-       <div v-if="buttonOn" class='w-full '>
-							<div  class="flex w-full md:w-3/5 ">
-									<button 
-										type="submit"
-										@click="creteNewQuestion"
-                                        @click.stop="isOpenNew = true"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-3/5 focus:outline-none "
-									>
-										+ Adicionar questão
-									</button>
-							</div>
-		</div>
-        <div >
-            <miniSurvey v-if="isOpenNew" v-model="realValue.newQuestion"/>
-        </div>
+       
         
 
     </div>  
@@ -142,12 +128,12 @@
         props: {
             value: {
                 required: false,
-                type: Object,
+                type: Array,
                 default: null
             },
             list: {
                 required: false,
-                type: Object,
+                type: Array,
                 default: null
             }
         },
@@ -183,18 +169,7 @@
                     this.isOpenSelected = true
 				    this.isOpenOptions = false
 			},
-            creteNewQuestion(){
-				this.buttonOn = false
-                this.value.newQuestion = {
-                    tipoSurvey: 0,
-					titleQuestion: '',
-					options: 
-                            [{
-                            inputPayload: ''
-                        }],
-					newQuestion:{}
-                }
-            },
+            
 			emitter(value) {
                  this.$emit("input", value);
             }

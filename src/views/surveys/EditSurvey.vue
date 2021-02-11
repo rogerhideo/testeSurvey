@@ -22,8 +22,19 @@
 				
          	</div> 
       	</div>
-		<div>	
-			<miniSurvey v-model="survey.question"/>
+		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap" >
+			<miniSurvey :value="quest"/>
+		</div>
+		<div class='w-full '>
+							<div  class="flex w-full md:w-3/5 ">
+									<button 
+										type="submit"
+										@click="creteNewQuestion"
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-3/5 focus:outline-none "
+									>
+										+ Adicionar questão
+									</button>
+							</div>
 		</div>				
   	</div>
 </template>
@@ -57,22 +68,25 @@
 						id: id,
 						title: this.titleProps,
 						description: this.descriptionProps,
-						question: {
+						question: [{
 							tipoSurvey: 0,
 							titleQuestion: '',
-							options: 
-								 {
-									 inputPayload: '',
-									options: []
-								},
-							newQuestion:{}
+							options:  []
+						}]
 						}
 
-					}
+					},
+					creteNewQuestion(){								
+						this.survey.question.push({
+							tipoSurvey: 0,
+							titleQuestion: '',
+							options:[]
+						})
+          			}
 				}
 			} 
 			
-	}
+	
 
 </script>
 
