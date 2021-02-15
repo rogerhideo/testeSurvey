@@ -25,7 +25,7 @@
 		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
 			<div class="flex items-center justify-center w-full ">
-				<div class="w-8 min-h-full bg-white opacity-0 hover:opacity-60 items-center flex justify-center transition duration-500 ease-in-out">
+				<div class="w-8 min-h-full bg-white opacity-20 hover:opacity-70 items-center flex justify-center transition duration-500 ease-in-out hover:shadow-md rounded-full">
 					<i class="fa fa-arrows my-handle">
 						<svg class="w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
@@ -39,7 +39,7 @@
 									<button 
 										type="submit"
 										@click="createMiddleQuestion(index)"
-										class="btn bg-white text-red-300  border-gray-300 border-1 py-0 px-0  flex-shrink-0 hover:shadow-xl   focus:outline-none "
+										class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-gray-300 border-1 p-1 flex-shrink-0 hover:shadow-xl   focus:outline-none "
 									>
 										 + questão
 									</button>
