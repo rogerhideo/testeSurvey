@@ -22,9 +22,30 @@
 				
          	</div> 
       	</div>
-		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap" >
+		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
+		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
+			<div class="flex items-center justify-center w-full ">
+				<div class="w-10 h-full bg-white opacity-0 hover:opacity-60 items-center flex justify-center transition duration-500 ease-in-out">
+					<i class="fa fa-arrows my-handle">
+						<svg class="w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+						</svg>
+
+					</i>
+				</div>
 			<miniSurvey :value="quest"/>
+			</div>
+			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center">
+									<button 
+										type="submit"
+										@click="creteNewQuestion"
+										class="btn bg-white text-red-300  border-gray-300 border-1  transition ease-out duration-500 flex-shrink-0 hover:shadow-xl  opacity-0 hover:opacity-60 focus:outline-none "
+									>
+										 + questão
+									</button>
+			</div>
 		</div>
+		</draggable>
 		<div class='w-full '>
 							<div  class="flex w-full md:w-3/5 ">
 									<button 
@@ -41,6 +62,7 @@
 
 
 <script>
+	import draggable from 'vuedraggable'
 	import miniSurvey from '@/components/surveys/miniSurvey.vue';
 	export default {		
 			data(){
@@ -59,7 +81,8 @@
 				},
 			},
 			components: {
-				miniSurvey
+				miniSurvey,
+				draggable
 			},
 			methods:{
 				createFreshSurveyObject() {
