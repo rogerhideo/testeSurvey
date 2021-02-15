@@ -35,7 +35,7 @@
 				</div>
 			<miniSurvey :value="quest"/>
 			</div>
-			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center opacity-0 hover:opacity-60 transition ease-out duration-500">
+			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center opacity-0 hover:opacity-70 transition ease-out duration-500">
 									<button 
 										type="submit"
 										@click="createMiddleQuestion(index)"
@@ -47,14 +47,16 @@
 		</div>
 		</draggable>
 		<div class='w-full '>
-							<div  class="flex w-full md:w-3/5 ">
+							<div  class="flex w-full md:w-3/5 justify-end">
+								<div class=" w-11/12">
 									<button 
 										type="submit"
 										@click="createNewQuestion"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-3/5 focus:outline-none "
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none ml-1"
 									>
 										+ Adicionar questão
 									</button>
+								</div>
 							</div>
 		</div>				
   	</div>
