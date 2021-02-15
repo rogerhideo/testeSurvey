@@ -39,7 +39,7 @@
 									<button 
 										type="submit"
 										@click="creteNewQuestion"
-										class="btn bg-white text-red-300  border-gray-300 border-1  transition ease-out duration-500 flex-shrink-0 hover:shadow-xl  opacity-0 hover:opacity-60 focus:outline-none "
+										class="btn bg-white text-red-300  border-gray-300 border-1 py-0  transition ease-out duration-500 flex-shrink-0 hover:shadow-xl  opacity-0 hover:opacity-60 focus:outline-none "
 									>
 										 + questão
 									</button>
