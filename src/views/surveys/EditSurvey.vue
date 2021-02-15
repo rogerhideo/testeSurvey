@@ -64,7 +64,8 @@
 <script>
 	import draggable from 'vuedraggable'
 	import miniSurvey from '@/components/surveys/miniSurvey.vue';
-	export default {		
+	export default {	
+			name:"EditSurvey",	
 			data(){
 				return{
 					survey: this.createFreshSurveyObject()
