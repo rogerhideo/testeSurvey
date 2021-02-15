@@ -3,7 +3,7 @@
       <div class="flex-wrap">
      <div class="flex p-3 ">		   
         <div class="md:w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5  border-l-3 focus:border-blue-500"> 
-				<div class=" flex-wrap sm:flex sm:justify-between items-center w-full text-left "> 
+				<div class=" flex-wrap sm:flex sm:justify-between items-center w-full text-center "> 
 					<div class="w-full sm:w-8/12">
 						<input 
 							type="text" 
