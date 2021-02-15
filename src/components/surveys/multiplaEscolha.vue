@@ -7,7 +7,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                     </svg>
 			    </i>
-            <input type="radio" value="op.value" id="op.value">
+            <input class="items-center" type="radio" value="op.value" id="op.value">
             <label for="op.value" class="w-full">
                             <input 
                                 type="text" 

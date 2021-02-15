@@ -118,8 +118,7 @@
         name:"miniSurvey",
         data(){
 			return {
-				isOpenOptions: false,
-                isOpenNew: false
+				isOpenOptions: false
 			}
 		},
         props: {
