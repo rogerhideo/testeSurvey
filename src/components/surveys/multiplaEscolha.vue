@@ -1,6 +1,12 @@
 <template>
     <div class="w-full">
+        <draggable :list="value" :options="{animation:200, handle:'.my-handle'}" >
         <div v-for="(op, index) in value" :key="index" class="flex w-full" >
+             <i class="fa fa-arrows my-handle">
+                    <svg class="w-5 h-5 mt-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                    </svg>
+			    </i>
             <input type="radio" value="op.value" id="op.value">
             <label for="op.value" class="w-full">
                             <input 
@@ -18,6 +24,7 @@
                 </svg>
             </button>
        </div>
+       </draggable>
        <div class="flex w-full" >
             <input type="radio" value="vall" id="vall">
             <label for="vall" class="w-full">
@@ -41,6 +48,7 @@
 </template>
 
 <script>
+    import draggable from 'vuedraggable'
     export default {
         name: "multiplaEscolhaa",
         data(){
@@ -49,6 +57,9 @@
                 vall : 'check',
                 count : 1
             }
+        },
+        components: {
+            draggable
         },
         props: {
             value: {
