@@ -7,7 +7,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                     </svg>
 			    </i>
-            <input class="justify-center" type="checkbox" value="op.value" id="op.value">
+            <input class="mt-2" type="checkbox" value="op.value" id="op.value">
             <label for="op.value" class="w-full">
                             <input 
                                 type="text" 
@@ -26,7 +26,7 @@
        </div>
        </draggable>
        <div class="flex w-full" >
-            <input type="checkbox" value="vall" id="vall">
+            <input class="mt-2" type="checkbox" value="vall" id="vall">
             <label for="vall" class="w-full">
                             <input 
                                 type="text" 
