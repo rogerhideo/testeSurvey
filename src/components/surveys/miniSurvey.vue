@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex-grow">
       <div class="flex-wrap">
      <div class="flex p-3 ">		   
         <div class="md:w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5  border-l-3 focus:border-blue-500"> 
@@ -35,7 +35,7 @@
 					<respostaCurta v-if="realValue.tipoSurvey === 1" v-model="realValue.options"/>
 				</div>
 			</div>
-			<div class="md:flex-grow-0 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 mt-5 ml-5" v-if="isOpenOptions" > 
+			<div class="md:flex-grow-0 h-full  bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl  border-l-3 focus:border-blue-500 p-5 ml-5" v-if="isOpenOptions" > 
 					<div class="flex ">				
 							<button 
 								class="ml-1  mt-1 flex items-center justify-center h-4 w-4 rounded-full   focus:ring-inset  hover:ring-gray-400 outline-none" @click="value.tipoSurvey = 1"  @click.stop="toggleModalSelected"
@@ -128,12 +128,12 @@
         props: {
             value: {
                 required: false,
-                type: Array,
+                type: Object,
                 default: null
             },
             list: {
                 required: false,
-                type: Array,
+                type: Object,
                 default: null
             }
         },
