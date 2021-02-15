@@ -1,7 +1,8 @@
 <template>
  	<div class="items-center justify-center min-h-screen bg-indigo-100 p-12 ">
 		 
-     	<div class="md:flex-wrap w-full bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5 "> 
+     	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 "> 
+		 	<div class=" w-11/12">
         	<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
 				<input 
 					type="text" 
@@ -21,6 +22,7 @@
 				> 
 				
          	</div> 
+			</div>
       	</div>
 		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
@@ -35,11 +37,11 @@
 				</div>
 			<miniSurvey :value="quest"/>
 			</div>
-			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center opacity-0 hover:opacity-70 transition ease-out duration-500">
+			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center items-center opacity-0 hover:opacity-70 transition ease-out duration-500">
 									<button 
 										type="submit"
 										@click="createMiddleQuestion(index)"
-										class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-gray-300 border-1 p-1 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+										class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-gray-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
 									>
 										 + questão
 									</button>
@@ -47,12 +49,12 @@
 		</div>
 		</draggable>
 		<div class='w-full '>
-							<div  class="flex w-full md:w-3/5 justify-end">
+							<div  class="flex w-3/5 justify-end">
 								<div class=" w-11/12">
 									<button 
 										type="submit"
 										@click="createNewQuestion"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none ml-1"
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
 									>
 										+ Adicionar questão
 									</button>
