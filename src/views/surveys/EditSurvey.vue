@@ -67,13 +67,7 @@
 	export default {		
 			data(){
 				return{
-					survey: this.createFreshSurveyObject(),
-					saveQuestion: {
-						type: Object
-					},
-					nextQuestion: {
-						type: Object
-					}
+					survey: this.createFreshSurveyObject()
 				}
 			},
 			props: {
@@ -120,27 +114,25 @@
 						}
           			},  
 					createMiddleQuestion(index){
+						var saveQuestion = this.freshObject()
+						var nextQuestion = this.freshObject()
 						console.log('middle index = ' + index) 
 						index += 1 
 						console.log('middle index = ' + index + ' length = ' + this.survey.question.length) 
-						this.saveQuestion = this.survey.question[index];	
+						saveQuestion = this.survey.question[index];	
 						this.survey.question[index] = this.freshObject() 
-						console.log('aux question = ' + this.saveQuestion.titleQuestion)
+						console.log('aux question = ' + saveQuestion.titleQuestion)
 						console.log('new object = ' + this.survey.question[index].titleQuestion)
 						index += 1
 						for(var i = index ; i < this.survey.question.length ; i++) {
 							console.log('Começo for  index = ' + index + ' i = ' + i)
 							console.log(' question = ' + this.survey.question[i].titleQuestion)
-							this.nextQuestion = this.survey.question[i]	
-							this.survey.question[i] = this.saveQuestion 
-							this.saveQuestion = this.nextQuestion
-							if (i === this.survey.question.length -1  ){
-						
-									console.log('dentro if i = ' + i)
-							}							
+							nextQuestion = this.survey.question[i]	
+							this.survey.question[i] = saveQuestion 
+							saveQuestion = nextQuestion						
 							console.log('final for  index = ' + index + ' i = ' + i)							
 						}
-						this.survey.question.push(this.nextQuestion)
+						this.survey.question.push(nextQuestion)
 					}
 				}
 			} 
