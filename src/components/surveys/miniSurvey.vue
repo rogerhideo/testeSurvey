@@ -15,7 +15,7 @@
 						> 
 					</div>	
 					<div>
-						<span class="text-gray-300"> {{selected}} </span>
+						<span class="text-gray-300"> {{selectedSet}} </span>
 						<div class="inline-block ">
 							<button 
 								class="ml-1 flex items-center justify-center h-4 w-4 rounded-full ring-2 ring-gray-300 focus:ring-inset  hover:ring-gray-400 focus:outline-none" @click="toggleModalOptions"
@@ -27,7 +27,7 @@
 						</div>
 					</div>
 				</div> 
-                <div v-if="isOpenSelected">
+                <div v-if="isOpenSelect">
 					<checkBox v-if="realValue.tipoSurvey === 4" v-model="realValue.options"/>
 					<listaSuspensa v-if="realValue.tipoSurvey === 5" v-model="realValue.options"/>
 					<multiplaEscolha v-if="realValue.tipoSurvey === 3" v-model="realValue.options"/>
@@ -119,10 +119,7 @@
         data(){
 			return {
 				isOpenOptions: false,
-				isOpenSelected: false,
-                isOpenNew: false,
-				buttonOn : true,
-				selected: 'Tipo de questão'
+                isOpenNew: false
 			}
 		},
         props: {
@@ -149,25 +146,8 @@
 				this.isOpenOptions = !this.isOpenOptions
 			},
 			toggleModalSelected() {
-                switch (this.value.tipoSurvey) {
-                    case 4:
-                        this.selected = 'Caixa de Seleção';
-                        break;
-                    case 5:
-                        this.selected = 'Lista Suspensa';
-                        break;
-                    case 3:
-                        this.selected = 'Multiplha Escolha';
-                        break;
-                    case 2:
-                        this.selected = 'Parágrafo';
-                        break;
-                    case 1:
-                        this.selected = 'Resposta Curta';
-                        break;
-                    }
-                    this.isOpenSelected = true
 				    this.isOpenOptions = false
+					this.selected = this.selectedSet()
 			},
             
 			emitter(value) {
@@ -178,12 +158,42 @@
         computed:{
             realValue() {
                 return this.value ? this.value : this.list;
-            },
-            valueLength(){
-                return this.value.length -1 ;
-            }
-        }  
-    }
+            },			
+			selectedSet(){
+				var texto
+				switch (this.value.tipoSurvey) {
+						case 4:
+							texto = 'Caixa de Seleção'
+							break
+						case 5:
+							texto  = 'Lista Suspensa'
+							break
+						case 3:
+							texto  = 'Multiplha Escolha'
+							break
+						case 2:
+							texto  = 'Parágrafo'
+							break
+						case 1:
+							texto  = 'Resposta Curta'
+							break
+						default:
+							texto  = 'Tipo de questão'
+							break
+						}
+				return texto
+			},
+			isOpenSelect(){
+				if (this.value.tipoSurvey !== 0 ){
+					console.log("isopen slec")
+					return true
+				}
+				else
+					return false
+			}	
+		}		
+    }  
+    
 </script>
 
 <style lang="scss" scoped>

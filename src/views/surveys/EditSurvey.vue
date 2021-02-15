@@ -116,21 +116,18 @@
 					createMiddleQuestion(index){
 						var saveQuestion = this.freshObject()
 						var nextQuestion = this.freshObject()
-						console.log('middle index = ' + index) 
 						index += 1 
-						console.log('middle index = ' + index + ' length = ' + this.survey.question.length) 
+						if (index === this.survey.question.length -1 ){
+							nextQuestion = this.survey.question[index]
+							console.log('id index')
+						}
 						saveQuestion = this.survey.question[index];	
 						this.survey.question[index] = this.freshObject() 
-						console.log('aux question = ' + saveQuestion.titleQuestion)
-						console.log('new object = ' + this.survey.question[index].titleQuestion)
 						index += 1
 						for(var i = index ; i < this.survey.question.length ; i++) {
-							console.log('Começo for  index = ' + index + ' i = ' + i)
-							console.log(' question = ' + this.survey.question[i].titleQuestion)
 							nextQuestion = this.survey.question[i]	
 							this.survey.question[i] = saveQuestion 
-							saveQuestion = nextQuestion						
-							console.log('final for  index = ' + index + ' i = ' + i)							
+							saveQuestion = nextQuestion												
 						}
 						this.survey.question.push(nextQuestion)
 					}
