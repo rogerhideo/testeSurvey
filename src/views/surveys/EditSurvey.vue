@@ -52,7 +52,7 @@
 									<button 
 										type="submit"
 										@click="createNewQuestion"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none ml-1"
+										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none ml-1"
 									>
 										+ Adicionar questão
 									</button>
