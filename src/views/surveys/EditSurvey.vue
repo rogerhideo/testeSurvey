@@ -1,7 +1,7 @@
 <template>
  	<div class="items-center justify-center min-h-screen bg-indigo-100 p-12 ">
 		 
-     	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 "> 
+     	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 mb-5 "> 
 		 	<div class=" w-11/12">
         	<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
 				<input 
@@ -27,14 +27,21 @@
 		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
 			<div class="flex items-center justify-center w-full ">
-				<div class="w-8 min-h-full bg-white opacity-20 hover:opacity-70 items-center flex justify-center transition duration-500 ease-in-out hover:shadow-md rounded-full">
-					
-
-					<i class="fa fa-arrows my-handle cursor-move transform hover:scale-110 ">
-						<svg class="w-5 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-						</svg>
-					</i>
+				<div class="w-8 min-h-full flex-wrap ">
+					<div class="bg-white hover:shadow-md rounded-full justify-center items-center mb-5  flex-grow transform hover:scale-110  opacity-20 hover:opacity-70  transition duration-500 ease-in-out">
+						<i class="fa fa-arrows my-handle cursor-pointer  transform hover:scale-110" @click="removeOption(index)">
+							<svg class="w-5 transform hover:scale-110 ml-1"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</i>
+					</div>
+					<div class="bg-white hover:shadow-md rounded-full justify-center items-center mt-5  flex-grow transform hover:scale-110  opacity-20 hover:opacity-70  transition duration-500 ease-in-out">
+						<i class="fa fa-arrows my-handle cursor-move transform hover:scale-110 ">
+							<svg class="w-5 transform hover:scale-110 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+							</svg>
+						</i>
+					</div>
 				</div>
 			<miniSurvey :value="quest"/>
 			</div>
@@ -136,6 +143,9 @@
 							saveQuestion = nextQuestion												
 						}
 						this.survey.question.push(nextQuestion)
+					},				
+					removeOption(index){
+						this.survey.question.splice(index, 1);
 					}
 				}
 			} 
