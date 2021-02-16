@@ -28,8 +28,10 @@
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
 			<div class="flex items-center justify-center w-full ">
 				<div class="w-8 min-h-full bg-white opacity-20 hover:opacity-70 items-center flex justify-center transition duration-500 ease-in-out hover:shadow-md rounded-full">
-					<i class="fa fa-arrows my-handle">
-						<svg class="w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					
+
+					<i class="fa fa-arrows my-handle cursor-move transform hover:scale-110 ">
+						<svg class="w-5 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
 						</svg>
 					</i>
