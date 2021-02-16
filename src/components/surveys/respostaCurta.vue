@@ -28,7 +28,7 @@
 		</div>	
         </draggable>
         <div class="flex">
-        <input 
+             <input 
                 type="text" 
                 name="option" 
                 id="option" 

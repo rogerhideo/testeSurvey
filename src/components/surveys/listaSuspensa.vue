@@ -20,23 +20,32 @@
                     class="flex w-full outline-none mt-1  p-1 mb-3  border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                 >  
                 <button 
-                    class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none transform hover:scale-110" 
+                    class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none transform hover:scale-110" @click="removeOption(index)"
                 >	
-                    <svg class="w-3 mt-3 opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" @click="removeOption(index)">
+                    <svg class="w-3 mt-3 opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>             
             </div>	
         </draggable>
-        <input 
+        <div class="flex">
+            <input 
                 type="text" 
                 name="option" 
                 id="option" 
                 placeholder= "Nova Opção"
                 v-model= "inputPayload"
                 @keyup.enter= "addOption"
-                class="flex w-full outline-none mt-1  p-1 mb-3  border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
-            > 
+                class="flex w-full outline-none mt-1 ml-7 p-1 mb-3 border-b-1 border-gray-300 shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+            >
+            <button 
+                    class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none transform hover:scale-110" 
+                >	
+                <svg class="w-3 mt-3 opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+            </button>
+       	</div>
     </div>
 </template>
 
