@@ -40,7 +40,7 @@
                             >               
             </label>
             <button 
-                class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none" 
+                class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none" @click="removeOption(index)"
             >	
                 <svg class="w-3 mt-3 opacity-40 hover:opacity-70" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -81,7 +81,10 @@
                 this.count += 1
                 this.vall = 'check'
                 this.vall = this.vall + this.count        
-            }                
+            },
+            removeOption(index){
+                this.value.splice(index, 1);
+            }                   
         }
 
     }

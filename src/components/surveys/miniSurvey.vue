@@ -18,9 +18,9 @@
 						<span class="text-gray-300"> {{selectedSet}} </span>
 						<div class="inline-block ">
 							<button 
-								class="ml-1 flex items-center justify-center h-4 w-4 rounded-full ring-2 ring-gray-300   hover:ring-gray-400 focus:outline-none transform hover:scale-125 shadow-sm" @click="toggleModalOptions"
+								class="ml-1 flex items-center justify-center h-4 w-4 rounded-full ring-2 ring-gray-300   hover:ring-gray-400 focus:outline-none transform hover:scale-110 shadow-sm" @click="toggleModalOptions"
 							>	
-								<svg class=" w-4 transform hover:scale-125 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<svg class=" w-4 transform hover:scale-110 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 								</svg>
 							</button>
