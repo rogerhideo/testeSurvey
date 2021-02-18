@@ -1,24 +1,26 @@
 <template>
 <div class="flex-wrap items-center justify-center min-h-screen bg-indigo-100 p-12 ">
 		 
-	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 mb-5 "> 
+	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-5 "> 
 		<div class=" w-11/12">
 			<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
+				<label for="title" class="block text-sm font-medium text-gray-300">Título do formulário</label>
 				<input 
 					type="text" 
 					name="title" 
 					id="title" 
 					placeholder= "Título do formulário"
 					v-model= "survey.title"
-					class="flex w-full outline-none mt-1  p-1 mb-3 text-2xl border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+					class="flex w-full outline-none mt-1  p-1 mb-3 text-2xl border-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
 				> 
+				<label for="description" class="block text-sm font-medium text-gray-300">Descrição</label>
 				<input 
 					type="text" 
 					name="description" 
 					id="description" 
 					placeholder= "Descrição do formulário"
 					v-model= "survey.description"
-					class="flex w-full outline-none mt-1  p-1 mb-3 text-gray-300 border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+					class="flex w-full outline-none mt-1  p-1 mb-3 text-gray-300 border-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
 				> 
 				
 			</div> 
@@ -49,14 +51,14 @@
 				<button 
 					type="submit"
 					@click="createMiddleQuestion(index)"
-					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 mr-3flex-shrink-0 hover:shadow-xl   focus:outline-none "
 				>
 						+ questão
 				</button>
 				<button 
 					type="submit"
 					@click="saveIn"
-					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+					class="ml-3 rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
 				>
 						Save
 				</button>
@@ -88,7 +90,7 @@
 			name:"EditSurvey",	
 			data(){
 				return{
-					survey: this.createFreshSurveyObject()
+					survey: {}
 				}
 			},
 			components: {
@@ -96,19 +98,6 @@
 				draggable
 			},
 			methods:{
-				createFreshSurveyObject() {
-					const id = Math.floor(Math.random() * 10000000)
-						return {
-							id: id,
-							title: '',
-							description: '',
-							question: [{
-								tipoSurvey: 0,
-								titleQuestion: '',
-								options:  []
-							}]
-							}
-					},
 					createNewQuestion(){								
 						this.survey.question.push({
 							tipoSurvey: 0,
@@ -157,9 +146,8 @@
 					}
 			},
 			created() {
-				this.survey.title = this.$route.params.titleSurvey.title
-				this.survey.description = this.$route.params.titleSurvey.description  
-			}
+				this.survey = this.$route.params.survey
+				}
 			} 
 			
 	

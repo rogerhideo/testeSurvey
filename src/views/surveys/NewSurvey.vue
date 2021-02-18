@@ -7,7 +7,7 @@
 								<input 
 									type="text" 
 									placeholder= "Digite o titulo do questionário"
-                  v-model="titleSurvey.title"
+                  v-model="title"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mx-3 bg-gray-100 border-2  hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>
 
@@ -18,7 +18,7 @@
 									name="description" 
 									id="description" 
                   placeholder= "Digite o titulo do questionário"
-                  v-model = "titleSurvey.description"
+                  v-model = "description"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mb-3 mx-3 bg-gray-100 border-2   hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>      
               
@@ -38,15 +38,24 @@
         
           data() {
             return {
-              titleSurvey: { 
                 title: '', 
-                description: ''							
-            }
+                description: ''							          
             }
 	        },
           methods:{
             onSubmit() {
-                this.$router.push({ name: "edit-survey", params: { titleSurvey : this.titleSurvey }})
+              const id = Math.floor(Math.random() * 10000000)
+              var survey = {
+                id: id,
+                title: this.title,
+                description: this.description,
+                question: [{
+                        tipoSurvey: 0,
+                        titleQuestion: '',
+                        options:  []
+                }]
+              }
+              this.$router.push({ name: "edit-survey", params: { survey : survey }})
           } 
       }
       }
