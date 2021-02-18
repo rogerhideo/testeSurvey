@@ -7,7 +7,7 @@
 								<input 
 									type="text" 
 									placeholder= "Digite o titulo do questionário"
-                  v-model="title"
+                  v-model="titleSurvey.title"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mx-3 bg-gray-100 border-2  hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>
 
@@ -18,7 +18,7 @@
 									name="description" 
 									id="description" 
                   placeholder= "Digite o titulo do questionário"
-                  v-model = "description"
+                  v-model = "titleSurvey.description"
 									class="flex-shrink-0 sm:flex w-11/12 outline-none mt-1  p-1 mb-3 mx-3 bg-gray-100 border-2   hover:bg-white shadow-sm sm:text-sm border-blue-300 focus:border-blue-500 focus:bg-white rounded-md"
 								>      
               
@@ -26,9 +26,8 @@
           <div class="flex w-full sm:justify-between items-center p-2" >
           
               <a href="/" class="btn text-red-400  border-red-400 border-2 hover:bg-red-400 hover:text-white transition ease-out duration-500  ml-1">Cancelar</a>
-            
-              <a href="/editsurvey" class="btn text-blue-400  border-blue-400 border-2 hover:bg-blue-400 hover:text-white transition ease-out duration-500 flex-shrink-0 mr-3">Criar Survey</a>
-            
+
+                 <a  href="#" @click="onSubmit"  class="btn text-blue-400  border-blue-400 border-2 hover:bg-blue-400 hover:text-white transition ease-out duration-500 flex-shrink-0 mr-3">Criar Survey</a>
           </div>  
       </div>
   </div>
@@ -36,12 +35,20 @@
 
 <script>
       export default {
+        
           data() {
             return {
-              title: '', 
-              description: ''							
+              titleSurvey: { 
+                title: '', 
+                description: ''							
             }
-	        }  
+            }
+	        },
+          methods:{
+            onSubmit() {
+                this.$router.push({ name: "edit-survey", params: { titleSurvey : this.titleSurvey }})
+          } 
+      }
       }
 </script>
 

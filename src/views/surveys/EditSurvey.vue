@@ -145,7 +145,15 @@
 						this.survey.question.splice(index, 1);
 					},
 					saveIn(){
-						
+						  this.$store
+								.dispatch("survey/updateSurveys", this.survey)
+								.then(() => {
+									console.log('save ok')
+								})
+								.catch(() => {
+									//NProgress.done()
+									console.log('catch')
+								})
 					}
 			},
 			created() {

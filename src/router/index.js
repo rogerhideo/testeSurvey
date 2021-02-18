@@ -21,10 +21,16 @@ const routes = [
     name: 'new-survey',
     component: NewSurvey
   },
+  //{
+  // path: "/editsurvey",
+  //name: "edit-survey",
+  //component: EditSurvey
+  //},
   {
-   path: "/editsurvey",
-  name: "edit-survey",
-  component: EditSurvey
+    path: "/editsurvey",
+    name: "edit-survey",
+    component: EditSurvey
+  
   },
   //{
   //path: "/createuser",
