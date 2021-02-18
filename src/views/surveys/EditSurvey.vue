@@ -1,9 +1,9 @@
 <template>
- 	<div class="items-center justify-center min-h-screen bg-indigo-100 p-12 ">
+<div class="flex-wrap items-center justify-center min-h-screen bg-indigo-100 p-12 ">
 		 
-     	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 mb-5 "> 
-		 	<div class=" w-11/12">
-        	<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
+	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-3 ml-6 mb-5 "> 
+		<div class=" w-11/12">
+			<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
 				<input 
 					type="text" 
 					name="title" 
@@ -21,10 +21,10 @@
 					class="flex w-full outline-none mt-1  p-1 mb-3 text-gray-300 border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
 				> 
 				
-         	</div> 
-			</div>
-      	</div>
-		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
+			</div> 
+		</div>
+	</div>
+	<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
 			<div class="flex items-center justify-center w-full ">
 				<div class="w-8 min-h-full flex-wrap ">
@@ -46,52 +46,50 @@
 			<miniSurvey :value="quest"/>
 			</div>
 			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center items-center opacity-0 hover:opacity-70 transition ease-out duration-500">
-									<button 
-										type="submit"
-										@click="createMiddleQuestion(index)"
-										class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-gray-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
-									>
-										 + questão
-									</button>
+				<button 
+					type="submit"
+					@click="createMiddleQuestion(index)"
+					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+				>
+						+ questão
+				</button>
+				<button 
+					type="submit"
+					@click="saveIn"
+					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+				>
+						Save
+				</button>
 			</div>
 		</div>
-		</draggable>
-		<div class='w-full '>
-							<div  class="flex w-3/5 justify-end">
-								<div class=" w-11/12">
-									<button 
-										type="submit"
-										@click="createNewQuestion"
-										class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
-									>
-										+ Adicionar questão
-									</button>
-								</div>
-							</div>
-		</div>				
-  	</div>
+	</draggable>
+	<div class='w-full '>
+		<div  class="flex w-3/5 justify-end">
+			<div class=" w-11/12">
+				<button 
+					type="submit"
+					@click="createNewQuestion"
+					class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+				>
+					+ Adicionar questão
+				</button>
+			</div>
+		</div>
+	</div>				
+</div>
 </template>
 
 
 <script>
 	import draggable from 'vuedraggable'
 	import miniSurvey from '@/components/surveys/miniSurvey.vue';
+
 	export default {	
 			name:"EditSurvey",	
 			data(){
 				return{
 					survey: this.createFreshSurveyObject()
 				}
-			},
-			props: {
-				titleProps: {
-					type: String,
-					default: ''
-				},
-				descriptionProps: {
-					type: String,
-					default: ''
-				},
 			},
 			components: {
 				miniSurvey,
@@ -100,17 +98,16 @@
 			methods:{
 				createFreshSurveyObject() {
 					const id = Math.floor(Math.random() * 10000000)
-					return {
-						id: id,
-						title: this.titleProps,
-						description: this.descriptionProps,
-						question: [{
-							tipoSurvey: 0,
-							titleQuestion: '',
-							options:  []
-						}]
-						}
-
+						return {
+							id: id,
+							title: '',
+							description: '',
+							question: [{
+								tipoSurvey: 0,
+								titleQuestion: '',
+								options:  []
+							}]
+							}
 					},
 					createNewQuestion(){								
 						this.survey.question.push({
@@ -146,8 +143,15 @@
 					},				
 					removeOption(index){
 						this.survey.question.splice(index, 1);
+					},
+					saveIn(){
+						
 					}
-				}
+			},
+			created() {
+				this.survey.title = this.$route.params.titleSurvey.title
+				this.survey.description = this.$route.params.titleSurvey.description  
+			}
 			} 
 			
 	
