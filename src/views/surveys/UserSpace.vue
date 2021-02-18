@@ -48,7 +48,8 @@
 										{{ surv.question.length }}
 									</td>
 									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-										<a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+										
+										<a href="#" @click="editSurvey(surv)" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 									</td>
 									
 								</tr>
@@ -65,6 +66,11 @@
 <script>
 	export default {
 		name: "UserSpace",
+	methods:{
+		editSurvey(surv){
+				this.$router.push({ name: "edit-survey", params: { survey : surv }})
+		}
+	},
 	computed: {
       getSurveys() {
         return this.$store.state.survey.surveys;
