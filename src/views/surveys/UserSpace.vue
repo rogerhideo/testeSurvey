@@ -27,7 +27,7 @@
 									Nº de Questões
 								</th>
 								<th scope="col" class="relative px-6 py-3 text-left text-xs font-medium">
-									sl
+									
 									<span class="sr-only">Edit</span>
 								</th>
 							</tr>
@@ -35,19 +35,19 @@
 						<tbody>
 							<div v-for="(surv, index) in getSurveys" :key="index" class="flex w-full">
 								<tr class="bg-white flex ">
-									<td scope="col" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm font-medium text-gray-900">
 										{{ surv.id }}
 									</td>
-									<td scope="col" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
 										{{ surv.title }}
 									</td>
-									<td scope="col" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
 										{{ surv.description }}
 									</td>
-									<td scope="col" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500 tracking-wider">
 										{{ surv.question.length }}
 									</td>
-									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium tracking-wider">
 										
 										<a href="#" @click="editSurvey(surv)" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 									</td>

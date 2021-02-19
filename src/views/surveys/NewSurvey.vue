@@ -53,7 +53,8 @@
                         tipoSurvey: 0,
                         titleQuestion: '',
                         options:  []
-                }]
+                }],
+              itsNew: true
               }
               this.$router.push({ name: "edit-survey", params: { survey : survey }})
           } 
