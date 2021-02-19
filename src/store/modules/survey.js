@@ -43,22 +43,18 @@ export const state = {
  
 export const mutations = { 
   NEW_SURVEY: (state, payload) => {
-    console.log('mutation new survey')
     state.surveys.push(payload)
-
   },
   UPDATE_SURVEY: (state, {payload, index}) => {
     state.surveys[index] = payload
-  },
   }
+  }
+
 export const actions = {
     updateSurveys({ commit }, payload) {
-      console.log('update action')
       if (payload.itsNew) {
-        console.log('if new')
         payload.itsNew = false
         commit('NEW_SURVEY', payload)
-        console.log('final new')
       }
       else {
         for(var index = 0 ; index < state.surveys.length ; index ++) {
@@ -70,7 +66,6 @@ export const actions = {
       }
     }
   }
-
 
 export const getters = {
   getSurveyById: state => id => {
