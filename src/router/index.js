@@ -29,8 +29,8 @@ const routes = [
   {
     path: "/editsurvey",
     name: "edit-survey",
-    component: EditSurvey
-  
+    component: EditSurvey,
+    props: true
   },
   //{
   //path: "/createuser",

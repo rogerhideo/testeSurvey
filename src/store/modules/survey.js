@@ -15,8 +15,8 @@ export const state = {
       },
       {
         id: 2,
-        title: "President",
-        description: "Let's talk about R president",
+        title: "Travel",
+        description: "Let's talk about trvel preferences",
         question: [{
                 tipoSurvey: 1,
                 titleQuestion: "Diga em poucas Palavras",

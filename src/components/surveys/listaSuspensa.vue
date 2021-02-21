@@ -64,7 +64,7 @@
         props: {
             value: {
                 required: false,
-                type: Object,
+                type: Array,
                 default: null
             }     
         },

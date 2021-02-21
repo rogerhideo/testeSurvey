@@ -4,7 +4,7 @@
 	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-5 "> 
 		<div class=" w-11/12">
 			<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
-				<label for="title" class="block text-sm font-medium text-gray-300">Título do formulário</label>
+				<label  class="block text-sm font-medium text-gray-300">Título do formulário</label>
 				<input 
 					type="text" 
 					name="title" 

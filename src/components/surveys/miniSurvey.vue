@@ -146,7 +146,7 @@
 			},
 			toggleModalSelected() {
 				    this.isOpenOptions = false
-					this.selected = this.selectedSet()
+					this.selected = this.selectedSet
 			},
             
 			emitter(value) {
@@ -184,7 +184,6 @@
 			},
 			isOpenSelect(){
 				if (this.value.tipoSurvey !== 0 ){
-					console.log("isopen slec")
 					return true
 				}
 				else

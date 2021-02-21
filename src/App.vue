@@ -3,8 +3,7 @@
     <div class="flex  items-center justify-center">
       <div id="nav">     
         <router-link to="/">Home</router-link> |
-        <router-link to="/newsurvey">New Survey</router-link> |
-        <router-link to="/editsurvey">Edit Survey</router-link> 
+        <router-link to="/newsurvey">New Survey</router-link> 
       </div>
     </div>
     
