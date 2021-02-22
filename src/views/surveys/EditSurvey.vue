@@ -1,7 +1,7 @@
 <template>
 <div class="flex-wrap items-center justify-center min-h-screen bg-indigo-100 p-12 ">
 		 
-	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-5 "> 
+	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-3 "> 
 		<div class=" w-11/12">
 			<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
 				<label  class="block text-sm font-medium text-gray-300">Título do formulário</label>
@@ -24,6 +24,19 @@
 				> 
 				
 			</div> 
+		</div>
+	</div>
+	<div class='w-full '>
+		<div  class="flex w-3/5 justify-end">
+			<div class=" w-11/12">
+				<button 
+					type="submit"
+					@click="saveIn"
+					class="btn bg-white text-blue-300  border-blue-300 border-1 hover:bg-blue-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+				>
+					 Salvar mudanças
+				</button>
+			</div>
 		</div>
 	</div>
 	<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">

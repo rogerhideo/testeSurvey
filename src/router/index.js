@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-//import store from '@/store'
+import store from '@/store'
 import NotFound from '@/views/issues/NotFound.vue'
 import NetworkIssue from '@/views/issues/NetworkIssue.vue'
 import NProgress from 'nprogress'
@@ -27,10 +27,28 @@ const routes = [
   //component: EditSurvey
   //},
   {
-    path: "/editsurvey",
+    path: "/editsurvey/:id",
     name: "edit-survey",
     component: EditSurvey,
-    props: true
+    props: true, // Set params to props
+    beforeEnter(routeTo, routeFrom, next) {
+        store
+            .dispatch('survey/fetchSurvey', routeTo.params.id)
+            .then(survey => {
+                routeTo.params.survey = survey // <--- Set the event we retrieved
+                next()
+            })
+            .catch(error => {
+                if (error.response && error.response.status == 404) {
+                    next({
+                        name: '404',
+                        params: { resource: 'user' }
+                    })
+                } else {
+                    next({ name: 'network-issue' })
+                }
+            })
+    }
   },
   //{
   //path: "/createuser",

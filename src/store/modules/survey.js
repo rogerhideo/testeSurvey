@@ -10,8 +10,7 @@ export const state = {
               tipoSurvey: 3,
               titleQuestion: "Best Day",
               options : []
-            }],
-      itsNew: false
+            }]
       },
       {
         id: 2,
@@ -21,8 +20,7 @@ export const state = {
                 tipoSurvey: 1,
                 titleQuestion: "Diga em poucas Palavras",
                 options : []
-              }],
-        itsNew: false
+              }]
         }
         ,
         {
@@ -33,11 +31,11 @@ export const state = {
                   tipoSurvey: 4,
                   titleQuestion: "usually do you preffer...?",
                   options : []
-                }],
-          itsNew: false
+                }]
           }
 
-  ]
+  ],
+  survey: {}
 }
 
  
@@ -47,24 +45,39 @@ export const mutations = {
   },
   UPDATE_SURVEY: (state, {payload, index}) => {
     state.surveys[index] = payload
-  }
+  },
+  SET_SURVEY(state, payload) {
+    state.survey = payload
+}
   }
 
 export const actions = {
-    updateSurveys({ commit }, payload) {
-      if (payload.itsNew) {
-        payload.itsNew = false
-        commit('NEW_SURVEY', payload)
-      }
-      else {
+    updateSurveys({ commit }, payload) {     
         for(var index = 0 ; index < state.surveys.length ; index ++) {
           if( payload.id === state.surveys[index].id){
             commit('UPDATE_SURVEY',{ payload, index})
             break
           }											
         }
+      
+    },
+    addNewSurvey({commit}, payload){
+      commit('NEW_SURVEY', payload)
+    },
+
+    fetchSurvey({ commit, getters, state }, id) {
+      if (id == state.survey.id) {
+          return state.survey
       }
-    }
+      var survey = getters.getSurveyById(id)
+
+      if (survey) {
+          commit('SET_SURVEY', survey)
+          return survey
+      } else {     
+        console.log('eroor fetch survey')      
+      }
+  }
   }
 
 export const getters = {

@@ -49,7 +49,7 @@
 									</td>
 									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium tracking-wider">
 										
-										<a href="#" @click="editSurvey(surv)" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+										<a href="#" @click="editSurvey(surv.id)" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 									</td>
 									
 								</tr>
@@ -67,8 +67,8 @@
 	export default {
 		name: "UserSpace",
 	methods:{
-		editSurvey(surv){
-				this.$router.push({ name: "edit-survey", params: { survey : surv }})
+		editSurvey(id){
+				this.$router.push({ name: "edit-survey", params: { id : id }})
 		}
 	},
 	computed: {

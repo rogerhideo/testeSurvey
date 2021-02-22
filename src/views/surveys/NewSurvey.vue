@@ -53,11 +53,22 @@
                         tipoSurvey: 0,
                         titleQuestion: '',
                         options:  []
-                }],
-              itsNew: true
+                }]
               }
-              this.$router.push({ name: "edit-survey", params: { survey : survey }})
-          } 
+              this.saveIn(survey)
+              this.$router.push({ name: "edit-survey", params: { id : survey.id }})
+          },
+          saveIn(survey){
+						  this.$store
+								.dispatch("survey/addNewSurvey", survey)
+								.then(() => {
+									console.log('save ok')
+								})
+								.catch(() => {
+									//NProgress.done()
+									console.log('catch')
+								})
+					} 
       }
       }
 </script>
