@@ -26,13 +26,13 @@
 			</div> 
 		</div>
 	</div>
-	<div class='w-full '>
+	<div v-if="survey.question.length === 1" class='w-full '>
 		<div  class="flex w-3/5 justify-end">
 			<div class=" w-11/12">
 				<button 
 					type="submit"
 					@click="saveIn"
-					class="btn bg-white text-blue-300  border-blue-300 border-1 hover:bg-blue-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+					class="btn bg-white text-blue-200  border-blue-300 border-1 hover:bg-gray-50 hover:text-red-100 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
 				>
 					 Salvar mudanças
 				</button>
@@ -41,7 +41,7 @@
 	</div>
 	<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
 		<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
-			<div class="flex items-center justify-center w-full ">
+			<div class="flex items-center justify-center w-full m-0 ">
 				<div class="w-8 min-h-full flex-wrap ">
 					<div class="bg-white hover:shadow-md rounded-full justify-center items-center mb-5  flex-grow transform hover:scale-110  opacity-20 hover:opacity-70  transition duration-500 ease-in-out">
 						<i class="fa fa-arrows my-handle cursor-pointer  transform hover:scale-110" @click="removeOption(index)">
@@ -60,21 +60,31 @@
 				</div>
 			<miniSurvey :value="quest"/>
 			</div>
-			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center items-center opacity-0 hover:opacity-70 transition ease-out duration-500">
-				<button 
-					type="submit"
-					@click="createMiddleQuestion(index)"
-					class="rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 mr-3flex-shrink-0 hover:shadow-xl   focus:outline-none "
-				>
-						+ questão
-				</button>
-				<button 
-					type="submit"
-					@click="saveIn"
-					class="ml-3 rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
-				>
-						Save
-				</button>
+			<div v-if="survey.question.length > 1 && index < survey.question.length -1" class="flex w-3/5 justify-center items-center opacity-0 hover:opacity-70 transform scale-y-50 hover:scale-100  transition ease-out duration-700 ml-6 ">
+				<div class="flex w-2/5 ">
+					<button 
+						type="submit"
+						@click="saveIn"
+						class="mr-3 w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+					>
+							Save 
+							<svg class="w-3 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+					</button>
+				</div>
+				<div class="flex w-2/5 ">
+					<button 
+						type="submit"
+						@click="createMiddleQuestion(index)"
+						class="w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 ml-3 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+					>
+						<svg class="w-3 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						questão
+					</button>
+				</div>
 			</div>
 		</div>
 	</draggable>
@@ -84,7 +94,7 @@
 				<button 
 					type="submit"
 					@click="createNewQuestion"
-					class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-gray-100 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+					class="btn bg-white text-red-200  border-gray-300 border-1 hover:bg-gray-50 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
 				>
 					+ Adicionar questão
 				</button>
