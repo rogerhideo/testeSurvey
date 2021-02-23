@@ -27,7 +27,7 @@
           
               <a href="/" class="btn text-red-400  border-red-400 border-2 hover:bg-red-400 hover:text-white transition ease-out duration-500  ml-1">Cancelar</a>
 
-                 <a  href="#" @click="onSubmit"  class="btn text-blue-400  border-blue-400 border-2 hover:bg-blue-400 hover:text-white transition ease-out duration-500 flex-shrink-0 mr-3">Criar Survey</a>
+                 <a  @click="onSubmit"  class="btn text-blue-400  border-blue-400 border-2 hover:bg-blue-400 hover:text-white transition ease-out duration-500 flex-shrink-0 mr-3">Criar Survey</a>
           </div>  
       </div>
   </div>
@@ -55,20 +55,18 @@
                         options:  []
                 }]
               }
-              this.saveIn(survey)
-              this.$router.push({ name: "edit-survey", params: { id : survey.id }})
-          },
-          saveIn(survey){
-						  this.$store
+              this.$store
 								.dispatch("survey/addNewSurvey", survey)
 								.then(() => {
+
+                  this.$router.push({ name: "edit-survey", params: { id : survey.id }})
 									console.log('save ok')
 								})
 								.catch(() => {
 									//NProgress.done()
 									console.log('catch')
 								})
-					} 
+          }
       }
       }
 </script>

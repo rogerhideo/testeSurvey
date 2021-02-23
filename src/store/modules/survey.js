@@ -64,13 +64,13 @@ export const actions = {
     addNewSurvey({commit}, payload){
       commit('NEW_SURVEY', payload)
     },
-
     fetchSurvey({ commit, getters, state }, id) {
       if (id == state.survey.id) {
           return state.survey
       }
+      console.log('id = ' + id)
       var survey = getters.getSurveyById(id)
-
+      console.log('id = ' + id + 'survey title = ' + survey.title)
       if (survey) {
           commit('SET_SURVEY', survey)
           return survey
@@ -82,7 +82,7 @@ export const actions = {
 
 export const getters = {
   getSurveyById: state => id => {
-      return state.surveys.find(survey => survey.id === id)
+      return  state.surveys.find(survey => survey.id == id)
   }
 }
 
