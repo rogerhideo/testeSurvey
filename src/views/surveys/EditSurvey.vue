@@ -4,23 +4,23 @@
 	<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-3 "> 
 		<div class=" w-11/12">
 			<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
-				<label  class="block text-sm font-medium text-gray-300">Título do formulário</label>
+				
 				<input 
 					type="text" 
 					name="title" 
 					id="title" 
 					placeholder= "Título do formulário"
 					v-model= "survey.title"
-					class="flex w-full outline-none mt-1  p-1 mb-3 text-2xl border-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
+					class="flex w-full outline-none text-center text-3xl border-b-2 border-gray-100  shadow-sm  focus:border-gray-300  rounded-md  mt-1  p-1 mb-3"
 				> 
-				<label for="description" class="block text-sm font-medium text-gray-300">Descrição</label>
+				
 				<input 
 					type="text" 
 					name="description" 
 					id="description" 
 					placeholder= "Descrição do formulário"
 					v-model= "survey.description"
-					class="flex w-full outline-none mt-1  p-1 mb-3 text-gray-300 border-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
+					class="flex w-full outline-none mt-1 p-1 mb-3 text-center text-xl text-gray-300 border-b-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
 				> 
 				
 			</div> 
