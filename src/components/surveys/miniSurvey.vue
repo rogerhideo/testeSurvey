@@ -41,12 +41,12 @@
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
 								 @click="value.tipoSurvey = 1"  @click.stop="toggleModalSelected" 
 							> 	
-								<svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+								<svg class="w-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 7a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 13a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
 							
 							
-							<span class="text-gray-500 hover:text-black hover:font-bold ml-2"> Reposta Curta </span>
+							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Reposta Curta </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
@@ -58,7 +58,7 @@
 									<path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
 							
-							<span class="text-gray-500 hover:text-black hover:font-bold ml-2"> Parágrafo </span>
+							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Parágrafo </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
@@ -71,7 +71,7 @@
 								</svg>
 							
 						
-							<span class="text-gray-500 hover:text-black hover:font-bold ml-2"> Multiplha Escolha </span>
+							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Multiplha Escolha </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				

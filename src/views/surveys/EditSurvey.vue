@@ -11,7 +11,7 @@
 					id="title" 
 					placeholder= "Título do formulário"
 					v-model= "survey.title"
-					class="flex w-full outline-none text-center text-3xl border-b-2 border-gray-100  shadow-sm  focus:border-gray-300  rounded-md  mt-1  p-1 mb-3"
+					class="flex w-full outline-none text-center text-3xl border-b-2 border-gray-100  shadow-sm  focus:border-blue-500  rounded-md  mt-1  p-1 mb-3"
 				> 
 				
 				<input 
@@ -20,7 +20,7 @@
 					id="description" 
 					placeholder= "Descrição do formulário"
 					v-model= "survey.description"
-					class="flex w-full outline-none mt-1 p-1 mb-3 text-center text-xl text-gray-300 border-b-2 border-gray-100    shadow-sm sm:text-sm  focus:border-gray-300  rounded-md"
+					class="flex w-full outline-none mt-1 p-1 mb-3 text-center text-xl text-gray-500 border-b-2 border-gray-100    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
 				> 
 				
 			</div> 
