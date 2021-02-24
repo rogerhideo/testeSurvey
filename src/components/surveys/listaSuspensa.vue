@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <draggable :list="value" :options="{animation:200, handle:'.my-handle'}" >
+        <draggable :list="value"  animation="200"  handle=".my-handle" >
            
             <div v-for="(op, index) in value" :key="index" class="flex w-full">
                 <button 

@@ -48,14 +48,14 @@
 									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
 										{{ surv.description }}
 									</td>
-									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500 tracking-wider">
+									<td scope="col" class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500 ">
 										{{ surv.question.length }}
 									</td>
-									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium tracking-wider">
+									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 										
 										<a  @click="editSurvey(surv.id)" class="text-indigo-600 hover:text-indigo-900 cursor-pointer ">Edit</a>
 									</td>
-									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium tracking-wider">
+									<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium ">
 										
 										<a  @click="removeSurvey(index)" class=" hover:text-indigo-900  text-red-300 cursor-pointer ">Remove</a>
 									</td>

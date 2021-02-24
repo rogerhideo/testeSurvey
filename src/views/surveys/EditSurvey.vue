@@ -40,7 +40,7 @@
 				</div>
 			</div>
 		</div>
-		<draggable :list="survey.question" :options="{animation:200, handle:'.my-handle'}">
+		<draggable :list="survey.question" animation="200"  handle=".my-handle">
 			<div v-for="(quest, index) in survey.question" :key="index" class="flex-wrap w-full" >
 				<div class="flex items-center justify-center w-full m-0 ">
 					<div class="w-8 min-h-full flex-wrap ">
