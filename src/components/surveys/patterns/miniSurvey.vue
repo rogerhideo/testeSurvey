@@ -112,11 +112,11 @@
 </template>
 
 <script>
-    import checkBox from '@/components/surveys/checkBox.vue';
-    import listaSuspensa from '@/components/surveys/listaSuspensa.vue';
-    import multiplaEscolha from '@/components/surveys/multiplaEscolha.vue';
-    import respostaLonga from '@/components/surveys/respostaLonga.vue';
-    import respostaCurta from '@/components/surveys/respostaCurta.vue';
+    import checkBox from '@/components/surveys/components/checkBox.vue'
+    import listaSuspensa from '@/components/surveys/components/listaSuspensa.vue'
+    import multiplaEscolha from '@/components/surveys/components/multiplaEscolha.vue'
+    import respostaLonga from '@/components/surveys/components/respostaLonga.vue'
+    import respostaCurta from '@/components/surveys/components/respostaCurta.vue'
 
     export default {
         name:"miniSurvey",

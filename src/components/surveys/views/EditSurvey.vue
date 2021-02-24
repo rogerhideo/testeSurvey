@@ -110,7 +110,7 @@
 
 <script>
 	import draggable from 'vuedraggable'
-	import miniSurvey from '@/components/surveys/miniSurvey.vue';
+	import miniSurvey from '@/components/surveys/patterns/miniSurvey.vue';
 
 	export default {	
 			name:"EditSurvey",	

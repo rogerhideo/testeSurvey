@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import NotificationContainer from '@/components/NotificationContainer.vue'
+import NotificationContainer from '@/components/issues/components/NotificationContainer.vue'
 export default {
   components: {
     NotificationContainer
