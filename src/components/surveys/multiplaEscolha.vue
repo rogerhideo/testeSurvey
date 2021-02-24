@@ -11,8 +11,8 @@
                     </svg>
 			    
             </button>
-            <input class="mt-3" type="radio" value="op.value" id="op.value">
-            <label for="op.value" class="w-full">
+            <input class="mt-3" type="radio" value="op.count" id="op.count">
+            <label for="op.count" class="w-full">
                             <input 
                                 type="text" 
                                 placeholder= "Opção 1"
@@ -30,8 +30,8 @@
        </div>
        </draggable>
        <div class="flex w-full" >
-            <input class="mt-2 ml-7" type="radio" value="vall" id="vall">
-            <label for="vall" class="w-full">
+            <input class="mt-2 ml-7" type="radio" value="test" id="test">
+            <label for="test" class="w-full">
                             <input 
                                 type="text" 
                                 placeholder= "Nova opção"
@@ -74,7 +74,6 @@
         },
         methods: {
             addOption(){
-                console.log('add')
                 this.value.push({
                     text: this.inputPayload,
                     value: this.vall
@@ -83,7 +82,7 @@
                 this.count += 1
                 this.vall = 'check'
                 this.vall = this.vall + this.count     
-                 console.log('fiim')      
+                    
             },
             removeOption(index){
                 this.value.splice(index, 1);

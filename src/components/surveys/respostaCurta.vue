@@ -15,7 +15,7 @@
                     id="option" 
                     placeholder= "Opção"
                     v-model= "op.text"
-                    class="flex w-full outline-none mt-1 p-1 mb-3  border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+                    class="flex w-full outline-none mt-1 p-1 mb-3  hover:border-b-1 focus:border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                 >  
                 <button 
                         class="ml-1 flex items-center justify-center h-6 w-6 rounded-full  focus:ring-inset  hover:ring-gray-400 focus:outline-none transform hover:scale-110" 
@@ -35,7 +35,7 @@
                 placeholder= "Nova Opção"
                 v-model= "inputPayload"
                 @click= "addOption"
-                class="flex w-full outline-none mt-1  ml-7 p-1 mb-3  border-b-2 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+                class=" mt-1  ml-7 p-1 mb-3  flex w-full outline-none hover:border-b-2 focus:border-b-2 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
             >
 
                 <svg class="w-3  ml-2 opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
