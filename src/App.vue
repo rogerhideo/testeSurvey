@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="min-h-screen">
+  <div id="app" >
     <div class="flex  items-center justify-center">
       <div id="nav">     
         <router-link to="/">Home</router-link> |
