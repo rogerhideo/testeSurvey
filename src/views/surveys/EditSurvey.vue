@@ -1,5 +1,5 @@
 <template>
-<div class="flex  justify-center min-h-screen">
+<div class="flex  justify-center items-center min-h-screen">
 	<div class="flex-wrap min-h-screen w-full justify-center bg-indigo-100 p-8 ">
 			
 		<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-3 "> 
