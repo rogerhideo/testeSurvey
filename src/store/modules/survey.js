@@ -68,9 +68,7 @@ export const actions = {
       if (id == state.survey.id) {
           return state.survey
       }
-      console.log('id = ' + id)
       var survey = getters.getSurveyById(id)
-      console.log('id = ' + id + 'survey title = ' + survey.title)
       if (survey) {
           commit('SET_SURVEY', survey)
           return survey
