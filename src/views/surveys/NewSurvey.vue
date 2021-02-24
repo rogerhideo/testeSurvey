@@ -44,7 +44,7 @@
 	        },
           methods:{
             onSubmit() {
-              const id = Math.floor(Math.random() * 10000000)
+              const id = Math.floor(Math.random() * 1000)
               var survey = {
                 id: id,
                 title: this.title,

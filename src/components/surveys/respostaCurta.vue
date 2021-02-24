@@ -34,11 +34,11 @@
                 id="option" 
                 placeholder= "Nova Opção"
                 v-model= "inputPayload"
-                @keyup.enter= "addOption"
-                class="flex w-full outline-none mt-1  ml-7 p-1 mb-3  border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
+                @click= "addOption"
+                class="flex w-full outline-none mt-1  ml-7 p-1 mb-3  border-b-2 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
             >
 
-                <svg class="w-3 mt-2  ml-2opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-3  ml-2 opacity-40 hover:opacity-70 transform hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
        	</div>
