@@ -11,7 +11,7 @@
                     </svg>
 			    
             </button>
-            <input class="mt-3" type="radio" value="op.count" id="op.count">
+            <input class="mt-3" type="radio" name="radiog" value="op.count">
             <label for="op.count" class="w-full">
                             <input 
                                 type="text" 
@@ -34,9 +34,9 @@
             <label for="test" class="w-full">
                             <input 
                                 type="text" 
-                                placeholder= "Nova opção"
+                                placeholder= "Digite aqui uma opção"
                                 v-model= "inputPayload"
-                                @click= "addOption"
+                                @keyup.enter= "addOption"
                                 class="flex w-full outline-none mt-1  p-1 mb-3 ml-2 border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                             >               
             </label>
@@ -47,7 +47,14 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-       </div>
+        </div>
+        <div class="flex">
+            <div  class="flex-grow-0 ml-8">
+                <p @click="addOption" class="inline-block text-sm text-blue-500 transform hover:scale-105  cursor-pointer ">
+                    Adicionar Nova Opção
+                </p>
+            </div>
+        </div>
     </div>
 </template>
 

@@ -33,9 +33,9 @@
             <label for="vall" class="w-full">
                             <input 
                                 type="text" 
-                                placeholder= "Nova opção"
+                                placeholder= "Digite aqui uma opção"
                                 v-model= "inputPayload"
-                                @click= "addOption"
+                                 @keyup.enter= "addOption"
                                 class="flex w-full outline-none mt-1  p-1 mb-3 ml-2 border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                             >               
             </label>
@@ -47,6 +47,13 @@
                 </svg>
             </button>
        </div>
+       <div class="flex">
+            <div  class="flex-grow-0 ml-8">
+                <p @click="addOption" class="inline-block text-sm text-blue-500 transform hover:scale-105  cursor-pointer ">
+                    Adicionar Nova Opção
+                </p>
+            </div>
+        </div>
     </div>
 </template>
 
