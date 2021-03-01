@@ -151,6 +151,7 @@
 			toggleModalSelected() {
 				    this.isOpenOptions = false
 					this.selected = this.selectedSet
+					this.value.options = []
 			},
             
 			emitter(value) {
