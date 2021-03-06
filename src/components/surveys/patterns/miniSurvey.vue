@@ -39,65 +39,65 @@
 					<div class="flex ">				
 							<i
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
-								 @click="value.tipoSurvey = 1"  @click.stop="toggleModalSelected" 
+							 	 @click="toggleModalSelected(1)" 
 							> 	
 								<svg class="w-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 7a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 13a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
 							
 							
-							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Reposta Curta </span>
+							<span class="text-gray-600 hover:text-black hover:font-bold ml-2"> Reposta Curta </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
 							<i
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
-								 @click="value.tipoSurvey = 2"  @click.stop="toggleModalSelected" 
+								  @click="toggleModalSelected(2)" 
 							> 
 								<svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
 							
-							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Parágrafo </span>
+							<span class="text-gray-600 hover:text-black hover:font-bold ml-2"> Parágrafo </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
 							<i
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
-								 @click="value.tipoSurvey = 3"  @click.stop="toggleModalSelected" 
+								 @click="toggleModalSelected(3)" 
 							> 	
 								<svg class="w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
 								</svg>
 							
 						
-							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Multiplha Escolha </span>
+							<span class="text-gray-600 hover:text-black hover:font-bold ml-2"> Multiplha Escolha </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
 							<i
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
-								 @click="value.tipoSurvey = 4"  @click.stop="toggleModalSelected" 
+								@click="toggleModalSelected(4)" 
 							> 
 								
 								<svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
 								</svg>
 							
-							<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Caixa de Seleção </span>
+							<span class="text-gray-600 hover:text-black hover:font-bold ml-2"> Caixa de Seleção </span>
 						</i>
 					</div>	
 					<div class="flex mt-3">				
 							<i
 								class="ml-1  mt-1  flex items-center justify-center rounded-full  cursor-pointer transform hover:scale-110  outline-none"
-								 @click="value.tipoSurvey = 5"  @click.stop="toggleModalSelected" 
+								   @click="toggleModalSelected(5)" 
 							> 
 								<svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 									<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
 								</svg>
 							
 						
-								<span class="text-gray-300 hover:text-black hover:font-bold ml-2"> Lista Suspensa </span>
+								<span class="text-gray-600 hover:text-black hover:font-bold ml-2"> Lista Suspensa </span>
 							</i>
 						
 					</div>	
@@ -148,7 +148,8 @@
 			toggleModalOptions() {
 				this.isOpenOptions = !this.isOpenOptions
 			},
-			toggleModalSelected() {
+			toggleModalSelected(tipo) {
+					this.value.tipoSurvey = tipo
 				    this.isOpenOptions = false
 					this.selected = this.selectedSet
 					this.value.options = []

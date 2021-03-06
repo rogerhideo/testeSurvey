@@ -1,7 +1,19 @@
 <template>
 <div class="flex  justify-center items-center min-h-screen">
 	<div class="flex-wrap min-h-screen w-full justify-center bg-indigo-100 p-8 ">
-			
+		<div v-if="survey.question.length > 1" class='w-full ml-6 mb-2 '>
+			<div  class="flex w-3/5 justify-end">
+				<div class=" flex-grow-0">
+					<button 
+						type="submit"
+						@click="saveIn"
+						class="btn bg-white text-blue-300  border-blue-300 border-1 hover:bg-blue-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-md w-full focus:outline-none "
+					>
+						Salvar mudanças
+					</button>
+				</div>
+			</div>
+		</div>	
 		<div class="md:flex-wrap w-3/5 bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl p-5 ml-6 mb-3 "> 
 			<div class=" w-11/12">
 				<div class="md:flex-wrap md:justify-center md:items-center w-full text-center "> 
@@ -66,11 +78,11 @@
 						<button 
 							type="submit"
 							@click="saveIn"
-							class="mr-3 w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+							class="mr-3 w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-blue-300  border-blue-300 border-1 py-1 px-2 flex-shrink-0 hover:shadow-xl   focus:outline-none transform hover:scale-105"
 						>
 								Save 
-								<svg class="w-3 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+								<svg class="w-4 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
 								</svg>
 						</button>
 					</div>
@@ -78,10 +90,11 @@
 						<button 
 							type="submit"
 							@click="createMiddleQuestion(index)"
-							class="w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 ml-3 flex-shrink-0 hover:shadow-xl   focus:outline-none "
+							class="w-full rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer bg-white text-red-300  border-red-300 border-1 py-1 px-2 ml-3 flex-shrink-0 hover:shadow-xl   focus:outline-none  transform hover:scale-105"
 						>
-							<svg class="w-3 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+							
+							<svg class="w-4 inline-block mb-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
 							</svg>
 							questão
 						</button>
@@ -95,7 +108,7 @@
 					<button 
 						type="submit"
 						@click="createNewQuestion"
-						class="btn bg-white text-red-200  border-gray-300 border-1 hover:bg-gray-50 hover:text-blue-200 transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
+						class="btn bg-white text-red-300  border-gray-300 border-1 hover:bg-red-300 hover:text-white transition ease-out duration-500 flex-grow hover:shadow-xl w-full focus:outline-none "
 					>
 						+ Adicionar questão
 					</button>
