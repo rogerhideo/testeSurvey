@@ -7,7 +7,7 @@
                     name="option" 
                     id="option" 
                     placeholder= "Digite aqui a resposta"
-                    v-model= "inputPayload"
+                    v-model= "value.text"
                     class=" mt-1  ml-7 p-1 mb-3  flex w-full outline-none hover:border-b-2 focus:border-b-2 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                 >
             </div>
@@ -17,7 +17,7 @@
                     type="text" 
                     name="option" 
                     id="option" 
-                    v-model= "inputPayload"
+                    v-model= "value.text"
                     class="flex w-full outline-none mt-1 p-1 mb-3  hover:border-b-1 focus:border-b-1 border-gray-300    shadow-sm sm:text-sm  focus:border-blue-500  rounded-md"
                 >                                                  
         </div>
@@ -43,6 +43,9 @@
                 type: Boolean,
                 default: false
             }      
+        },	
+        mounted () {
+            this.value.push({text :''})	
         }
     }
 </script>

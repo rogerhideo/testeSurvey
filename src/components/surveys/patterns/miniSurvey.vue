@@ -92,7 +92,7 @@
 						</i>						
 					</div>	
 				</div>
-				<div v-if="realValue.options.length > 0" class="w-auto bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5  ml-3"> 
+				<div v-if="realValue.tipoSurvey !== 0" class="w-auto bg-white shadow-md rounded-md border-gray-200 hover:shadow-xl w-min-2xl p-5  ml-3"> 
 					<p class="text-xl font-bold"> {{ value.titleQuestion }} </p>
 					<checkBox v-if="realValue.tipoSurvey === 4" v-model="realValue.options" :displayON="true"/>
 					<listaSuspensa v-if="realValue.tipoSurvey === 5" v-model="realValue.options" :displayON="true"/>
